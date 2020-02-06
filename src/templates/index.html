@@ -1,0 +1,141 @@
+{% macro foatitle(link, text) -%}
+<a name="{{ link }}"></a>
+<div style="background-image: url('images/sectionbacks/{{ link }}.png')"
+    class="d-flex foatitle justify-content-around mt-4">
+    <img src="images/leftlogobrace.png" alt="<" class="align-self-start mt-5">
+    <h1 class="align-self-center">{{ text }}</h1>
+    <img src="images/rightlogobrace.png" alt=">" class="align-self-end mb-5">
+</div>
+{%- endmacro %}
+
+{% macro menuitem(link, text) -%}
+<div class="col menuitem text-center p-2 p-lg-3">
+    <a href="{{ link }}" class="stretched-link text-monospace">{{ text }}</a>
+</div>
+{%- endmacro %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/zstyle.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="message.js"></script>
+    <title>Зыков Андрей. Разработчик.</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row position-relative align-items-center mt-4">
+            <div class="col-3">
+                <img id="logo" src="images/logo.png" class="img-fluid" alt="Логотип">
+            </div>
+            <div id="title" class="text-monospace text-left">
+                <a href="index.html" class="stretched-link">ZZIIKKemd</a>
+            </div>
+        </div>
+        <div class="row">
+            {{ menuitem('#stack', 'Стэк') }}
+            {{ menuitem('#works', 'Работы') }}
+            {{ menuitem('#contacts', 'Контакты') }}
+        </div>
+        <div id="info" class="card mt-5">
+            <div class="row">
+                <div class="col-sm-12 col-lg-3 p-2">
+                    <center>
+                        <img src="images/photo.png" class="card-img" alt="Фото">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="https://github.com/ZZIIKKemd" class="stretched-link" target="_blank">Зыков
+                                    Андрей</a>
+                            </h5>
+                        </div>
+                    </center>
+                </div>
+                <div class="col-sm-12 col-lg-9 text-center text-lg-left">
+                    <div class="card-body">
+                        <p class="card-text">Фриланс-разработчик.</p>
+                        <p class="card-text">Специализация – WEB-разработка (от самых простых статических сайтов до
+                            небольших клиент-серверных приложений) и ботах, использующих API соцсетей (чат-боты,
+                            управление группами и т.д.).</p>
+                        <p class="card-text">В активном изучении и другие технологии, например системный язык
+                            программирования Rust. Также практикуюсь в digital-art'е – хоть к разработке это мало
+                            относится, в дизайне должно помогать :)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ foatitle('stack', 'Используемые технологии') }}
+        <div class="row justify-content-between my-3 my-md-0">
+            {% for tech in techs %}
+            <div class="card tech rounded-0 col-5 col-sm-3 col-lg-2 m-1 m-md-4 p-0">
+                <img src="images/techs/{{ tech.image }}.png" alt="{{ tech.image }}" class="card-img mx-auto d-block">
+                <div class="card-body mt-3">
+                    <p class="card-text text-center">{{ tech.text }}</p>
+                </div>
+                <a href="{{ tech.url }}" target="_blank" class="stretched-link"></a>
+            </div>
+            {% endfor %}
+        </div>
+        <h5 class="text-center text-wrap mb-5">... и другие. Также работал со многими популярными CMS, такими как
+            Wordpress, Joomla и т.д.</h5>
+        {{ foatitle('works', 'Примеры проектов') }}
+        <div class="row justify-content-center mb-5">
+            {% for work in works %}
+            <div class="media work position-relative col-12 col-lg-6 my-4">
+                <img src="images/works/{{ work.logo }}.png" alt="{{ work.logo }}" class="img-fluid rounded-0 mr-2">
+                <div class="media-body p-3">
+                    <h5>{{ work.name }}</h5>
+                    {% for line in work.info %}
+                    <p>{{ line }}</p>
+                    {% endfor %}
+                </div>
+                <a href="{{ work.url }}" target="_blank" class="stretched-link"></a>
+            </div>
+            {% endfor %}
+        </div>
+        <a name="contacts"></a>
+        <h2 class="text-center text-wrap">Контакты</h2>
+        <h5 class="text-center text-wrap mt-4 mb-3">Вы можете написать мне через соцсеть или мессенджер...</h5>
+        <div class="row justify-content-center">
+            {% for contact in contacts %}
+            <div class="contact col-4 col-sm-2 col-lg-2 p-3 p-md-4 p-lg-5 rounded">
+                <img src="images/contacts/{{ contact.image }}.png" alt="{{ contact.url }}" class="img-fluid">
+                <a href="{{ contact.url }}" class="stretched-link"></a>
+            </div>
+            {% endfor %}
+        </div>
+        <h5 class="text-center text-wrap mt-2 mb-3">... либо связаться с помощью этой формы:</h5>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-11 col-md-10 col-lg-9 col-xl-8">
+                <form name="message">
+                    <div class="form-group">
+                        <textarea id="msgtext" cols="60"
+                            placeholder="Опишите задачу и не забудьте оставить свои контакты :)"
+                            class="form-control"></textarea>
+                        <div class="form-row justify-content-end my-2">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <input type="button" id="sendmsg" class="btn form-control" value="Отправить">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div id="footer" class="row justify-content-between mb-3">
+            <div class="col-12 col-lg-6 align-self-start">
+                <h5>ZZIIKKemd.ru, личный сайт Зыкова Андрея ©</h5>
+            </div>
+            <div class="col-12 col-lg-6 align-self-end">
+                Расположен на дешёвом и качественном хостинге <a href=" http://www.host-food.ru/p/25605/"
+                    target="_blank">HOST-FOOD.ru</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

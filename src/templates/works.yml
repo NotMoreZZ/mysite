@@ -1,0 +1,16 @@
+-
+  name: ZZIIKKemd
+  logo: zziikkemd
+  url: 'https://www.zziikkemd.ru'
+  info:
+    - 'Этот сайт :)'
+    - 'Выполнена вся работа от дизайна и прототипирования до вёрстки и программирования.'
+    - 'Основной стэк: PHP, JavaScript, Jinja и Scss в качестве основы + Python для генерации статических элементов.'
+-
+  name: Kharabot
+  logo: kharabot
+  url: 'https://github.com/ZZIIKKemd/Kharabot'
+  info:
+    - 'Чат-бот для группы в Discord. Пока с одной функцией – специфическое управление группами пользователей.'
+    - 'Работа ещё ведётся. Разрабатываю в одиночку :)'
+    - 'Основной стэк: Python: asyncio, discord.py, сервер на Linux с автозапуском из-под службы Systemd.'

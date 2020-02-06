@@ -1,0 +1,188 @@
+$darkcolor: #312b2f;
+$midcolor: #5178ba;
+$lightcolor: #e4e9eb;
+
+$md: 767.9px;
+$lg: 991.9px;
+
+*::selection,
+*::-moz-selection {
+    color: $darkcolor;
+    background-color: $lightcolor;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $lightcolor;
+    background-color: $darkcolor;
+
+    a:any-link {
+        color: $midcolor;
+    }
+
+    a:any-link {
+        text-decoration-line: none;
+    }
+
+    a:hover {
+        color: $lightcolor;
+    }
+}
+
+#logo {
+    min-width: 40px;
+}
+
+#title {
+    font-weight: 400;
+    font-size: 4rem;
+
+    a:any-link {
+        color: $midcolor;
+    }
+
+    @media (max-width: $lg) {
+        font-size: 3.5rem;
+    }
+
+    @media (max-width: $md) {
+        font-size: 2.5rem;
+    }
+}
+
+.menuitem {
+    font-size: 2rem;
+
+    &:hover {
+        background-color: $midcolor;
+    }
+
+    >a:any-link {
+        color: $lightcolor;
+    }
+
+    @media (max-width: $lg) {
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: $md) {
+        font-size: 1.3rem;
+    }
+}
+
+#info {
+    background-color: $darkcolor;
+    border: none;
+
+    img {
+        max-width: 150px;
+        min-width: 150px;
+    }
+}
+
+.foatitle {
+    height: 12rem;
+    background-attachment: fixed;
+    background-position: center center;
+
+    >h1 {
+        text-align: center;
+    }
+
+    >img {
+        height: 20px;
+    }
+
+    @media (max-width: $lg) {
+        & h1 {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.tech {
+    border: none;
+    background-color: $darkcolor;
+
+    img {
+        max-width: 64px;
+        max-height: 64px;
+    }
+
+    a:any-link {
+        color: $lightcolor;
+    }
+
+    .card-body {
+        background-color: $midcolor;
+    }
+
+    &:hover {
+        color: $midcolor;
+
+        .card-body {
+            background-color: $lightcolor;
+        }
+    }
+}
+
+.work {
+    border: none;
+
+    img {
+        width: 128px;
+        height: 128px;
+    }
+
+    .media-body {
+        min-height: 7rem;
+        background-color: $midcolor;
+    }
+
+    &:hover {
+        .media-body {
+            background-color: $lightcolor;
+            color: $midcolor;
+        }
+    }
+
+    @media (max-width: $md) {
+        & img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
+.contact {
+    &:hover {
+        background-color: $midcolor;
+    }
+}
+
+
+#msgtext {
+    background-color: $lightcolor;
+    color: $darkcolor;
+    min-height: 25rem;
+}
+
+#sendmsg {
+    background-color: $midcolor;
+    border-color: $midcolor;
+    color: $lightcolor;
+    height: 3rem;
+
+    &:hover {
+        background-color: $lightcolor;
+        border-color: $lightcolor;
+        color: $midcolor;
+    }
+}
+
+hr {
+    background-color: $lightcolor;
+}

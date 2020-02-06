@@ -1,0 +1,32 @@
+-
+  image: python
+  url: 'https://www.python.org/'
+  text: 'Python: основной ЯП, бэкэнд, сборка статики.'
+-
+  image: js
+  url: 'https://developer.mozilla.org/docs/Web/JavaScript'
+  text: 'JavaScript: скриптовый ЯП, фронтэнд, интерактивность.'
+-
+  image: php
+  url: 'https://www.php.net/'
+  text: 'PHP: скриптовый ЯП, бэкэнд для небольших приложений.'
+-
+  image: git
+  url: 'https://git-scm.com/'
+  text: 'Git: управление этапами разработки.'
+-
+  image: flask
+  url: 'http://flask.pocoo.org/'
+  text: 'Flask: минималистичный WEB-фреймфорк для Python.'
+-
+  image: boot
+  url: 'https://getbootstrap.com/'
+  text: 'Bootstrap: готовые шаблоны для быстрой вёрстки.'
+-
+  image: jinja
+  url: 'https://palletsprojects.com/p/jinja/'
+  text: 'Jinja: шаблонизатор HTML для Python.'
+-
+  image: sass
+  url: 'http://sass-lang.com/'
+  text: 'Sass (Scss): упрощение работы с css.'
