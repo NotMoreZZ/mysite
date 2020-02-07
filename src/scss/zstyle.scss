@@ -168,6 +168,12 @@ body {
     background-color: $lightcolor;
     color: $darkcolor;
     min-height: 25rem;
+
+    &::selection,
+    &::-moz-selection {
+        color: $lightcolor;
+        background-color: $midcolor;
+    }
 }
 
 #sendmsg {
