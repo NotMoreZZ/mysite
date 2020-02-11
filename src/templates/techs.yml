@@ -30,3 +30,7 @@
   image: sass
   url: 'http://sass-lang.com/'
   text: 'Sass (Scss): упрощение работы с css.'
+-
+  image: docker
+  url: 'http://sass-lang.com/'
+  text: 'Docker: изолирование приложений, облегчение разработки.'
